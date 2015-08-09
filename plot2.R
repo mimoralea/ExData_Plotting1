@@ -10,8 +10,7 @@ if (!file.exists(filename)) {
     if (download.file(url,
                       tmp_filename,
                       "curl") != 0) {
-        message("the file failed to download, will not proceed")
-        return
+        stop("the file failed to download, will not proceed")
     }
     unzip(tmp_filename)
     unlink(tmp_filename)
